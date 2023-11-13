@@ -2,39 +2,39 @@ name: CH_01
 on: push
 
 jobs:
- job1:
-  - name: First Job
-    runs-on: ubuntu-latest
-    steps:
-     - name: Step 1
-       uses: actions/checkout@v2
-     - name: Step 2
-       run: date 
+  job1:
+    - name: First Job
+      runs-on: ubuntu-latest
+      steps:
+      - name: Step 1
+        uses: actions/checkout@v2
+      - name: Step 2
+        run: date 
   
- job2:
-  - name: Second Job
-    runs-on: windows-latest
-    steps:
-     - name: Step 1
-       uses: actions/checkout@v2
-     - name: Step 2
-       run: date /t
+  job2:
+    - name: Second Job
+      runs-on: windows-latest
+      steps:
+      - name: Step 1
+        uses: actions/checkout@v2
+      - name: Step 2
+        run: date /t
   
- job3:
-  - name: Third Job
-    runs-on: macos-latest
-    steps:
-     - name: Step 1
-       uses: actions/checkout@v2
-     - name: Step 2
-       run: date 
-  
- job4:
-  - name: Forth Job
-    needs: [job1,job2,job3]
-    runs-on: macos-latest
-    steps:
-     - name: Step 1
-       uses: actions/checkout@v2
-     - name: Step 2
-       run: date 
+  job3:
+    - name: Third Job
+      runs-on: macos-latest
+      steps:
+      - name: Step 1
+        uses: actions/checkout@v2
+      - name: Step 2
+        run: date 
+    
+  job4:
+    - name: Forth Job
+      needs: [job1,job2,job3]
+      runs-on: macos-latest
+      steps:
+      - name: Step 1
+        uses: actions/checkout@v2
+      - name: Step 2
+        run: date 
