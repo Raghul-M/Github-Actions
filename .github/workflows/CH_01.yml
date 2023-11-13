@@ -11,7 +11,7 @@ jobs:
      - name: Step 2
        run: date 
   
-  job2:
+ job2:
   - name: Second Job
     runs-on: windows-latest
     steps:
@@ -20,7 +20,7 @@ jobs:
      - name: Step 2
        run: date /t
   
-  job3:
+ job3:
   - name: Third Job
     runs-on: macos-latest
     steps:
@@ -29,7 +29,7 @@ jobs:
      - name: Step 2
        run: date 
   
-  job4:
+ job4:
   - name: Forth Job
     needs: [job1,job2,job3]
     runs-on: macos-latest
