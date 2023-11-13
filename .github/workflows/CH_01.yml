@@ -3,7 +3,7 @@ on: push
 
 jobs:
   job1:
-    - name: First Job
+      name: First Job
       runs-on: ubuntu-latest
       steps:
       - name: Step 1
@@ -12,7 +12,7 @@ jobs:
         run: date 
   
   job2:
-    - name: Second Job
+      name: Second Job
       runs-on: windows-latest
       steps:
       - name: Step 1
@@ -21,7 +21,7 @@ jobs:
         run: date /t
   
   job3:
-    - name: Third Job
+      name: Third Job
       runs-on: macos-latest
       steps:
       - name: Step 1
@@ -30,7 +30,7 @@ jobs:
         run: date 
     
   job4:
-    - name: Forth Job
+      name: Forth Job
       needs: [job1,job2,job3]
       runs-on: macos-latest
       steps:
