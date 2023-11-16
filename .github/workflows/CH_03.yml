@@ -1,25 +1,23 @@
 name: Artifact test
-on: push
+on: [push]
 
 env:
-  FILE_NAME: hello-server
+  ARTIFACT_NAME: hello-artifact
 
 jobs:
-  build:
+  main:
     name: Build
     runs-on: ubuntu-latest
+
     steps:
 
     - name: Check out code
       uses: actions/checkout@v1
-
-    - name: Build ${{ env.FILE_NAME }} for ubuntu-latest
-      run: go build ${{ env.FILE_NAME }}.go
       
     - name: Upload artifact for linux
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: linux
-        path: ./${{ env.FILE_NAME }}
+        name: ${{ env.ARTIFACT_NAME }}
+        path: .
 
     
