@@ -1,4 +1,5 @@
 name: python app
+
 on: [push]
 
 jobs:
@@ -7,18 +8,19 @@ jobs:
 
     steps:
       - name: Check out code
-      - uses: actions/checkout@v1
-      - run: python hello.py
- 
+        uses: actions/checkout@v1
+      - name: Run tests
+        run: python hello.py
+
   build:
     needs: [test]
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
-      - uses: actions/checkout@v1
-      - uses: actions/upload-artifact@v2
-        with: 
-          name: hello world
+        uses: actions/checkout@v1
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: hello-world
           path: .
-    
