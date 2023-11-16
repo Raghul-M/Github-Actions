@@ -11,6 +11,7 @@ jobs:
     - run: python hello.py
  
   build:
+    needs: [test]
     runs-on: ubuntu-latest
 
     steps:
