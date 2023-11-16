@@ -6,19 +6,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
-    - uses: actions/checkout@v1
-    - run: python hello.py
+      - name: Check out code
+      - uses: actions/checkout@v1
+      - run: python hello.py
  
   build:
     needs: [test]
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
-    - uses: actions/checkout@v1
-    - uses: actions/upload-artifact@v2
-      with: 
-        name: hello world
-        path: .
+      - name: Check out code
+      - uses: actions/checkout@v1
+      - uses: actions/upload-artifact@v2
+        with: 
+          name: hello world
+          path: .
     
